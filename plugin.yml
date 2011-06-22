@@ -1,0 +1,11 @@
+name: 3coBanks
+main: me.ic3d.ecobanks.EcoBanks
+version: 1.0
+author: IC3D
+database: true
+description: >
+             3coBanks saving  module.
+commands:
+  eb:
+    Description: Perform Banking Actions
+    Usage: /eb <bankstuff>
