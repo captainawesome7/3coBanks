@@ -126,6 +126,17 @@ public class EcoBanks extends JavaPlugin {
 		pClass.setSavings(newMoney);
 		this.getDatabase().save(pClass);
 	}
+	public void createAccount(Player player, Integer amount) {
+		EBP pClass = getDatabase().find(EBP.class).where().ieq("PlayerName", player.getName()).findUnique();
+		if (pClass== null) {
+			pClass = new EBP ();
+			pClass.setPlayerName(player.getName());
+			pClass.setSavings(amount);
+			this.getDatabase().save(pClass);
+		} else {
+			return;
+		}
+	}
 	public Boolean hasSaved(Player player, Integer amount) {
 		EBP pClass = getDatabase().find(EBP.class).where().ieq("PlayerName", player.getName()).findUnique();
 		if (pClass== null) {
